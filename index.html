@@ -8,12 +8,12 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
 		<style>
-			/* Wrapper QR */
+			/* QR wrapper */
 			.qr-icon {
 				position: relative;
 			}
 
-			/* QR default (tersembunyi di bawah icon) */
+			/* QR muncul di bawah icon */
 			.qr-icon img {
 				position: absolute;
 				top: 130%;
@@ -30,10 +30,25 @@
 				box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 			}
 
-			/* Hover → fade + slide down */
 			.qr-icon:hover img {
 				opacity: 1;
 				transform: translateX(-50%) translateY(0);
+			}
+
+			/* Footer sebaris */
+			#footer .copyright {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 0.6em;
+				flex-wrap: wrap;
+				text-align: center;
+			}
+
+			#footer .cc-icons img {
+				max-width: 1em;
+				max-height: 1em;
+				vertical-align: middle;
 			}
 		</style>
 	</head>
@@ -50,7 +65,6 @@
 
 					<nav>
 						<ul>
-							<!-- QR Icon -->
 							<li class="qr-icon">
 								<a href="https://yf-regubot.streamlit.app"
 								   target="_blank"
@@ -61,7 +75,6 @@
 									 alt="QR ReguBot">
 							</li>
 
-							<!-- FlipBook -->
 							<li>
 								<a href="https://heyzine.com/flip-book/1dd6aa5898.html"
 								   target="_blank"
@@ -70,7 +83,6 @@
 								</a>
 							</li>
 
-							<!-- Survey -->
 							<li>
 								<a href="https://forms.gle/C2d9mtGncF954JMa9"
 								   target="_blank"
@@ -83,16 +95,35 @@
 				</header>
 
 				<footer id="footer">
-					<span class="copyright">
-						&copy; Yona Friantina. Design: <a href="http://html5up.net">HTML5UP</a>.
-					</span>
+					<div class="copyright">
+						<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+						   target="_blank"
+						   rel="license noopener noreferrer"
+						   class="cc-icons"
+						   title="Creative Commons BY-NC-SA 4.0">
+							<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC">
+							<img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="BY">
+							<img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="NC">
+							<img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="SA">
+						</a>
+
+						<span>·</span>
+						<span id="year"></span>
+						<span>·</span>
+						<span>Yona Friantina</span>
+						<span>·</span>
+						<span>Some rights reserved</span>
+					</div>
 				</footer>
 
 			</div>
 		</div>
 
 		<script>
-			window.onload = function() { document.body.classList.remove('is-preload'); }
+			window.onload = function() {
+				document.body.classList.remove('is-preload');
+				document.getElementById('year').textContent = new Date().getFullYear();
+			}
 			window.ontouchmove = function() { return false; }
 			window.onorientationchange = function() { document.body.scrollTop = 0; }
 		</script>
