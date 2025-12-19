@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Aerial by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>GitHub | Yona Friantina</title>
@@ -11,48 +6,95 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<style>
+			/* Wrapper QR */
+			.qr-icon {
+				position: relative;
+			}
+
+			/* QR default (tersembunyi di bawah icon) */
+			.qr-icon img {
+				position: absolute;
+				top: 130%;
+				left: 50%;
+				transform: translateX(-50%) translateY(-10px);
+				width: 120px;
+				height: 120px;
+				opacity: 0;
+				pointer-events: none;
+				transition: opacity 0.3s ease, transform 0.3s ease;
+				background: #fff;
+				padding: 6px;
+				border-radius: 6px;
+				box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+			}
+
+			/* Hover → fade + slide down */
+			.qr-icon:hover img {
+				opacity: 1;
+				transform: translateX(-50%) translateY(0);
+			}
+		</style>
 	</head>
+
 	<body class="is-preload">
 		<div id="wrapper">
 			<div id="bg"></div>
 			<div id="overlay"></div>
 			<div id="main">
 
-				<!-- Header -->
-					<header id="header">
-						<h1>Yona Friantina</h1>
-						<p>Experienced Accountant | Committed to Delivering Accurate, Ethical, and Dynamic Financial Solutions</p>
-						<nav>
-							<ul>
-								<li>
-								  <a href="https://yf-regubot.streamlit.app" target="_blank" class="icon brands">
-								    <img src="https://raw.githubusercontent.com/YonaFr/YonaFr.GitHub.IO/main/QR-PBJ.png" alt="ReguBot">
-								  </a>
-								</li>
-								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-								<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-							</ul>
-						</nav>
-					</header>
+				<header id="header">
+					<h1>Yona Friantina</h1>
+					<p>Experienced Accountant | Committed to Delivering Accurate, Ethical, and Dynamic Financial Solutions</p>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<span class="copyright">&copy; Yona Friantina. Design: <a href="http://html5up.net">HTML5UP</a>.</span>
-					</footer>
+					<nav>
+						<ul>
+							<!-- QR Icon -->
+							<li class="qr-icon">
+								<a href="https://yf-regubot.streamlit.app"
+								   target="_blank"
+								   class="icon solid fa-qrcode">
+									<span class="label">ReguBot</span>
+								</a>
+								<img src="https://raw.githubusercontent.com/YonaFr/YonaFr.GitHub.IO/main/QR-PBJ.png"
+									 alt="QR ReguBot">
+							</li>
+
+							<!-- FlipBook -->
+							<li>
+								<a href="https://heyzine.com/flip-book/1dd6aa5898.html"
+								   target="_blank"
+								   class="icon solid fa-book">
+									<span class="label">FlipBook</span>
+								</a>
+							</li>
+
+							<!-- Survey -->
+							<li>
+								<a href="https://forms.gle/C2d9mtGncF954JMa9"
+								   target="_blank"
+								   class="icon solid fa-clipboard-list">
+									<span class="label">Survey</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</header>
+
+				<footer id="footer">
+					<span class="copyright">
+						&copy; Yona Friantina. Design: <a href="http://html5up.net">HTML5UP</a>.
+					</span>
+				</footer>
 
 			</div>
 		</div>
+
 		<script>
 			window.onload = function() { document.body.classList.remove('is-preload'); }
 			window.ontouchmove = function() { return false; }
 			window.onorientationchange = function() { document.body.scrollTop = 0; }
 		</script>
 	</body>
-
 </html>
-
-
-
-
